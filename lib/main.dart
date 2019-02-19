@@ -8,10 +8,15 @@ class RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     final wordPair = WordPair.random();
-    return Text(wordPair.asPascalCase);
+    return Text(
+      wordPair.asPascalCase,
+      style:
+          TextStyle(fontSize: 25.0, color: Color.fromARGB(255, 255, 150, 150)),
+    );
   }
 }
 
+// 动态组件（具有状态的组件） StatefulWidget/StatelessWidget
 class RandomWords extends StatefulWidget {
   @override
   RandomWordsState createState() => new RandomWordsState();
@@ -19,7 +24,7 @@ class RandomWords extends StatefulWidget {
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext) {
     final wordPair = WordPair.random();
     return MaterialApp(
       title: 'Welcome to Flutter',
@@ -27,9 +32,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
-        body: Center(
-          child: Text(wordPair.asPascalCase),
-        ),
+        body:
+            Container(child: new RandomWords(), padding: EdgeInsets.all(10.0)),
       ),
     );
   }
