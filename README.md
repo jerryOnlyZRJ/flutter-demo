@@ -4,6 +4,10 @@ A new Flutter project.
 
 ## Getting Started
 
+0. (`$flutter devices`)
+1. `$open -a Simulator`
+2. `$flutter run [-d all]`
+
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
